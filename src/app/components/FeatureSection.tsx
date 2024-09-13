@@ -10,31 +10,34 @@ if (typeof window !== "undefined") {
 }
 
 export default function FeatureSection() {
-  const rightSectionRef = useRef(null);
+  const rightSectionRef = useRef<HTMLDivElement | null>(null); // Add type for TypeScript
   const [activeSection, setActiveSection] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    const rightSections =
-      rightSectionRef.current.querySelectorAll(".scroll-item");
+    if (rightSectionRef.current) {
+      const rightSections = rightSectionRef.current.querySelectorAll(
+        ".scroll-item"
+      );
 
-    rightSections.forEach((section, i) => {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => {
-          handleSectionChange(i);
-        },
-        onEnterBack: () => {
-          handleSectionChange(i);
-        },
-        scrub: true,
+      rightSections.forEach((section: Element, i: number) => {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => {
+            handleSectionChange(i);
+          },
+          onEnterBack: () => {
+            handleSectionChange(i);
+          },
+          scrub: true,
+        });
       });
-    });
+    }
   }, []);
 
-  const handleSectionChange = (i) => {
+  const handleSectionChange = (i: number) => {
     setIsTransitioning(true); // Start transition
     setTimeout(() => {
       setActiveSection(i); // Change content after transition starts
@@ -63,11 +66,6 @@ export default function FeatureSection() {
       description:
         "Track opens, clicks, engagement, and learning patterns from both a creator and user perspective.",
     },
-    // {
-    //   title: "Get Detailed Analytics",
-    //   description:
-    //     "Track opens, clicks, engagement, and learning patterns from both a creator and user perspective.",
-    // },
   ];
 
   return (
@@ -95,9 +93,6 @@ export default function FeatureSection() {
             className="right-part w-1/2 h-[200vh] overflow-hidden py-72 flex flex-col justify-start items-center"
             ref={rightSectionRef}
           >
-            {/* <div className="scroll-item bg-white w-3/4 h-screen my-10 flex justify-center items-center">
-              <p className="text-2xl text-white">Section 1</p>
-            </div> */}
             <div className="scroll-item backdrop-blur-lg rounded-2xl bg-gradient-to-r from-blue-50/50 via-blue-300/30 to-blue-100/50 bg-opacity-40 shadow-black drop-shadow-xl w-3/4 h-screen my-10 flex justify-center items-center">
               <Image
                 src={"/assets/newsletter.svg"}
@@ -109,7 +104,7 @@ export default function FeatureSection() {
             <div className="scroll-item backdrop-blur-lg rounded-2xl bg-gradient-to-r from-blue-50/50 via-blue-300/30 to-blue-100/50 bg-opacity-40 shadow-black drop-shadow-xl w-3/4 h-screen my-10 flex justify-center items-center">
               <Image
                 src={"/assets/dashboard.png"}
-                alt="Newsletter"
+                alt="Dashboard"
                 width={500}
                 height={500}
               />
@@ -117,22 +112,19 @@ export default function FeatureSection() {
             <div className="scroll-item backdrop-blur-lg rounded-2xl bg-gradient-to-r from-blue-50/50 via-blue-300/30 to-blue-100/50 bg-opacity-40 shadow-black drop-shadow-xl w-3/4 h-screen my-10 flex justify-center items-center">
               <Image
                 src={"/assets/discover.svg"}
-                alt="Newsletter"
+                alt="Discover"
                 width={500}
                 height={500}
               />
             </div>
-            <div className="scroll-item backdrop-blur-lg  rounded-2xl bg-gradient-to-r from-blue-50/50 via-blue-300/30 to-blue-100/50 bg-opacity-40 shadow-black drop-shadow-xl w-3/4 h-screen my-10 flex justify-center items-center">
+            <div className="scroll-item backdrop-blur-lg rounded-2xl bg-gradient-to-r from-blue-50/50 via-blue-300/30 to-blue-100/50 bg-opacity-40 shadow-black drop-shadow-xl w-3/4 h-screen my-10 flex justify-center items-center">
               <Image
                 src={"/assets/analytics.svg"}
-                alt="Newsletter"
+                alt="Analytics"
                 width={500}
                 height={500}
               />
             </div>
-            {/* <div className="scroll-item bg-white w-3/4 h-[50vh] my-10 flex justify-center items-center">
-              <p className="text-2xl text-white">Section 6</p>
-            </div> */}
           </div>
         </div>
       </section>
