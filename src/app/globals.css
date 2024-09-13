@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.transition-opacity {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0; /* Initial state hidden */
+  }
+  
+  .opacity-100 {
+    opacity: 1; /* Visible */
+  }
+  
+  @layer components {
+    .custom-list {
+      @apply list-none; /* Remove default bullet styling */
+    }
+  
+    .custom-list li {
+      @apply relative pl-8 text-lg font-medium text-gray-800 hover:text-blue-600 transition-all duration-300 ease-in-out;
+  
+      /* Custom bullet style using ::before */
+    }
+  
+    .custom-list li::before {
+      content: '•'; /* Use a custom bullet */
+      @apply absolute left-0 text-blue-500 text-2xl font-bold; /* Position and style bullet */
+      top: 0;
+      line-height: 1.2;
+    }
+  }
+  
