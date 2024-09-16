@@ -16,9 +16,8 @@ export default function FeatureSection() {
 
   useEffect(() => {
     if (rightSectionRef.current) {
-      const rightSections = rightSectionRef.current.querySelectorAll(
-        ".scroll-item"
-      );
+      const rightSections =
+        rightSectionRef.current.querySelectorAll(".scroll-item");
 
       rightSections.forEach((section: Element, i: number) => {
         ScrollTrigger.create({
@@ -71,9 +70,13 @@ export default function FeatureSection() {
   return (
     <>
       <section className="px-10">
+        <div className="flex justify-center items-center -mb-20 mt-20">
+          <p className="text-5xl font-semibold text-gray-950 opacity-90">A Sneak Peek at Our Features</p>
+        </div>
         <div className="flex">
           {/* Left Section: Sticky */}
           <div className="w-1/2 h-screen sticky top-0 flex flex-col justify-center ml-20">
+          
             <div
               className={`transition-opacity ${
                 isTransitioning ? "opacity-0" : "opacity-100"
