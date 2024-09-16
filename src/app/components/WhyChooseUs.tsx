@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
       <section className="flex flex-col justify-center items-center my-32 px-20">
         <p className="text-5xl font-semibold mb-20 textgray-900">Why Use Neuzify</p>
         <div className="flex flex-col md:flex-row justify-around items-center">
-          <div>
+          <div className="">
             <p className="text-4xl mb-16 font-medium text-gray-700 text-opacity-90 w-fit shadow-2xl">
               For Creators
             </p>
@@ -28,7 +28,7 @@ const WhyChooseUs = () => {
           </div>
           <div>
             <Image
-              className="shadow-xl"
+              className="shadow-xl mr-20"
               src={"/assets/creator.svg"}
               alt="creator"
               width={400}
