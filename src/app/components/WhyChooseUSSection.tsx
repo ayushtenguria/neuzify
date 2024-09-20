@@ -30,7 +30,7 @@ const SectionContent = ({ title, items, imageSrc, imageAlt, isReversed } : Secti
       </div>
       <div className="md:w-1/2 flex justify-center md:justify-end">
         <Image
-          className="shadow-xl"
+          className=""
           src={imageSrc}
           alt={imageAlt}
           width={400}

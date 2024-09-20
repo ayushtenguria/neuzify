@@ -11,7 +11,7 @@ const Hero = () => {
     gsap.fromTo(
       headerRef.current,
       { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 2, delay: 0.5, ease: "power3.out" }
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
     );
   }, []);
 
@@ -19,7 +19,7 @@ const Hero = () => {
     <>
       <header
         ref={headerRef}
-        className="flex md:flex-row flex-col p-32 space-x-5 justify-center items-center"
+        className="flex md:flex-row flex-col p-32 space-x-5 justify-center opacity-0 items-center"
       >
         <div>
           <p className="text-4xl font-medium">
