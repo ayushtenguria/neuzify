@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useEffect, useRef } from "react";
 import logo from "../../../public/assets/Investments.png";
 import Image from "next/image";
@@ -19,7 +20,7 @@ const Hero = () => {
     <>
       <header
         ref={headerRef}
-        className="flex md:flex-row flex-col p-32 space-x-5 justify-center opacity-0 items-center"
+        className="flex md:flex-row flex-col p-10 md:p-32 md:space-x-5 justify-center opacity-0 items-center"
       >
         <div>
           <p className="text-4xl font-medium">
@@ -34,7 +35,7 @@ const Hero = () => {
         </div>
         <div>
           <Image
-            className="drop-shadow-2xl"
+            className="drop-shadow-2xl max-sm:mt-10"
             src={logo}
             alt="HeaderImage"
             height={1000}

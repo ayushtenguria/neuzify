@@ -5,21 +5,24 @@ const Footer = () => {
   return (
     <>
       <footer className="flex flex-col space-y-3 justify-center items-center">
-        <div className="bg-blue-950 text-white mx-10 p-10 rounded-2xl flex md:flex-row flex-col font-medium justify-between items-start w-[65rem] 2xl:w-[85rem]">
+        <div className="bg-blue-950 text-white mx-5 md:mx-10 p-4 md:p-10 rounded-2xl flex md:flex-row flex-col font-medium justify-between items-start w-auto md:w-[65rem] 2xl:w-[85rem]">
           <div className="space-y-2">
-            <h3 className="text-5xl font-semibold">Neuzify</h3>
-            <p className="font-medium text-xl italic w-96">One platform to create, manage, and discover newsletters effortlessly.</p>
+            <h3 className="text-3xl md:text-5xl font-semibold">Neuzify</h3>
+            <p className="font-medium text-xl italic md:w-96">
+              One platform to create, manage, and discover newsletters
+              effortlessly.
+            </p>
           </div>
-          <div className="p-10 text-xl">
+          <div className="py-10 md:p-10 text-xl">
             <ul>
-                <li>Home</li>
-                <li>Features</li>
+              <li>Home</li>
+              <li>Features</li>
             </ul>
           </div>
           <div>
-          <button className="mt-6 px-6 py-2 w-60 font-semibold bg-blue-950 text-white border-white border-2 rounded-lg shadow hover:bg-blue-900 hover:scale-105 transform transition-transform duration-300">
-          Add to Waitlist
-        </button> 
+            <button className="md:mt-6 md:px-6 py-2 w-40 md:w-60 font-semibold bg-blue-950 text-white border-white border-2 rounded-lg shadow hover:bg-blue-900 hover:scale-105 transform transition-transform duration-300">
+              Add to Waitlist
+            </button>
           </div>
         </div>
         <div className="">

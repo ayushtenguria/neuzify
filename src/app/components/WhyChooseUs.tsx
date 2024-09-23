@@ -41,15 +41,15 @@ const WhyChooseUs = () => {
 
   return (
     <>
-      <section className="flex flex-col  justify-center items-center my-32 px-10 md:px-20">
-        <p className="text-5xl font-semibold mb-20 text-gray-900">
+      <section className="flex flex-col justify-center items-center md:my-32 px-10 md:px-20">
+        <p className="text-3xl md:text-5xl font-semibold md:mb-20 text-gray-900">
           Why Use Neuzify
         </p>
         <div
           ref={headref}
-          className="flex opacity-0 flex-col md:flex-row shadow-xl rounded-lg p-5 space-x-3"
+          className="flex md:opacity-0 flex-col md:flex-row shadow-xl rounded-lg p-5 space-x-3"
         >
-          <div className="m-5">
+          <div className="md:m-5">
             <SectionContent
               title="For Creators"
               items={[
