@@ -8,43 +8,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WhyUseUs = () => {
   const containerRef = useRef(null);
-  const sectionsRef = useRef([]);
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const sections = sectionsRef.current;
 
     sections.forEach((section) => {
-      const paragraphs = section.querySelectorAll("p");
+      if (section) {
+        // Ensure section is not null
+        const paragraphs = section.querySelectorAll("p");
 
-      paragraphs.forEach((paragraph) => {
-        gsap.fromTo(
-          paragraph,
-          {
-            opacity: 0, // Start fully hidden
-            y: 50, // Start slightly below its position
-          },
-          {
-            opacity: 1, // End fully visible
-            y: 0, // End at original position
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: paragraph,
-              start: "top 80%", // Trigger when top of paragraph reaches 80% of the viewport
-              end: "top 60%", // End when it scrolls to 60% of the viewport
-              toggleActions: "play none none none", // Play the animation once
-              markers: false, // Disable debug markers
+        paragraphs.forEach((paragraph) => {
+          gsap.fromTo(
+            paragraph,
+            {
+              opacity: 0,
+              y: 50,
             },
-          }
-        );
-      });
+            {
+              opacity: 1,
+              y: 0,
+              duration: 2,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: paragraph,
+                start: "top 80%",
+                end: "top 60%",
+                toggleActions: "play none none none",
+                markers: false,
+              },
+            }
+          );
+        });
+      }
     });
   }, []);
 
   return (
     <div ref={containerRef} className="relative">
       <section className="flex flex-col justify-center items-center">
-        {/* Full-screen section 1 */}
         <div
           ref={(el) => {
             if (el) sectionsRef.current[0] = el;
@@ -59,7 +61,6 @@ const WhyUseUs = () => {
           </p>
         </div>
 
-        {/* Full-screen section 2 */}
         <div
           ref={(el) => {
             if (el) sectionsRef.current[1] = el;
@@ -75,7 +76,6 @@ const WhyUseUs = () => {
           </p>
         </div>
 
-        {/* Full-screen section 3 */}
         <div
           ref={(el) => {
             if (el) sectionsRef.current[2] = el;
