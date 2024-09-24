@@ -1,28 +1,27 @@
 [
-    {
-      "number": "01",
-      "question": "What services does your agency provide?",
-      "answer": "We offer a comprehensive range of services including custom software development, mobile app development, web development, UI/UX design, and IT consulting. Whether you need a full-scale application or just a few tweaks to your existing system, we have the expertise to deliver solutions that meet your specific needs."
-    },
-    {
-      "number": "02",
-      "question": "How do you ensure the quality of your software products?",
-      "answer": "Quality is our top priority. We follow industry best practices and employ a robust testing process that includes unit testing, integration testing, and user acceptance testing. Our team also uses the latest tools and technologies to ensure that the software we deliver is reliable, secure, and performs optimally."
-    },
-    {
-      "number": "03",
-      "question": "What is your typical project timeline?",
-      "answer": "The timeline for a project depends on its complexity and scope. Generally, small projects can take anywhere from a few weeks to a few months, while larger projects may take several months to complete. We work closely with our clients to establish realistic timelines and ensure timely delivery without compromising on quality."
-    },
-    {
-      "number": "04",
-      "question": "How do you handle project communication and updates?",
-      "answer": "We believe in transparent and regular communication. Our project managers provide weekly updates and are always available to discuss progress, address concerns, and make adjustments as needed. We use project management tools to keep everything organized and ensure that everyone involved is on the same page."
-    },
-    {
-      "number": "05",
-      "question": "What industries do you specialize in?",
-      "answer": "Our team has experience across a wide range of industries including healthcare, finance, retail, education, and logistics. We understand the unique challenges and requirements of different sectors and tailor our solutions to meet the specific needs of each industry."
-    }
-  ]
-  
+  {
+    "number": "01",
+    "question": "What is this platform all about?",
+    "answer": "This platform unifies newsletter creation, management, and discovery for both creators and readers. Manage all your newsletters, track performance, and discover high-quality content—all in one place."
+  },
+  {
+    "number": "02",
+    "question": "When will the platform launch?",
+    "answer": "We’re working hard to bring this solution to life! Our MVP will launch soon. Join the waitlist to be notified and get early access."
+  },
+  {
+    "number": "03",
+    "question": "How do I join the waitlist?",
+    "answer": "Click on the “Join the Waitlist” button, and simply enter your email. You’ll receive updates on the platform’s progress and an invitation to the beta."
+  },
+  {
+    "number": "04",
+    "question": "What’s in it for early adopters?",
+    "answer": "Early adopters will get exclusive access to our platform, the chance to shape our features with feedback, and early-bird pricing on premium plans once we launch."
+  },
+  {
+    "number": "05",
+    "question": "Is there a cost to join the pre-launch",
+    "answer": "No! Joining the waitlist and gaining early access to our MVP is completely free."
+  }
+]

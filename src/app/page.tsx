@@ -9,7 +9,9 @@ export default function Home() {
     <div>
       <Hero />
       <WhyUseUs />
-      {/* <FeatureSection />*/}
+      <div className="hidden md:block">
+        <FeatureSection />
+      </div>
       <WhyChooseUs />
       <Faq />
     </div>
