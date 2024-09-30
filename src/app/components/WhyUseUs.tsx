@@ -22,7 +22,8 @@ const WhyUseUs = () => {
             paragraph,
             {
               opacity: 0,
-              y: 50, // Starting below the view
+              y: 50
+              , // Starting below the view
             },
             {
               opacity: 1,

@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <WhyUseUs />
+     
       <div className="hidden md:block">
         <FeatureSection />
       </div>

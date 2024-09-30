@@ -28,14 +28,14 @@ const FAQAccordion = () => {
             onChange={() => toggleAccordion(index)}
           />
           <label className=" flex justify-between md:space-y-12" htmlFor={`faq-${item.number}`}>
-            <div className=" flex p-3 md:w-[45rem] text-left space-x-3 md:space-x-24">
+             <div className=" flex p-3 md:w-[35rem] xl:[w-45rem] text-left space-x-3 md:space-x-24">
               <div className="">
                 <p className="text-blue-950 text-lg md:text-2xl font-semibold">
                   {item.number}
                 </p>
               </div>
               <div className="text-left text-black">
-                <p className="text-left md:w-[30rem] ">{item.question}</p>
+                <p className="text-left md:w-[20rem] ">{item.question}</p>
                 <div
                   className={` ${
                     openIndex === index ? "block" : "hidden"
