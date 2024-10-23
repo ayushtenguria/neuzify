@@ -1,19 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import path from 'path';
 
+// Define the spreadsheet ID
 const SPREADSHEET_ID = '1T60ghiLHKZFS6YZtUz99BS5aCtvpzHBEh4vrmG5H-A0'; // Replace with your Google Sheet ID
 
 export async function POST(req: NextRequest) {
   const { name, email } = await req.json(); // Parse the request body
 
   try {
-    // Use the path module to ensure the correct path is resolved
-    const keyFilePath = path.join(process.cwd(), 'src/app/api/submitForm/neuzify-15174891dfb7.json');
-
-    // Load the service account credentials
+    // Load the service account credentials from environment variables
     const auth = new google.auth.GoogleAuth({
-      keyFile: keyFilePath, // Path to your JSON file
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+      },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
