@@ -44,7 +44,7 @@ export const Navbar = () => {
           <div className="flex flex-row rounded-full backdrop-blur-lg bg-gray-200/10 border border-gray-950 bg-opacity-40">
             <ul className="flex flex-row justify-around space-x-5 px-2 py-2 mx-10 ">
               <li>
-                <Link href={"/about"} className="font-medium">
+                <Link href={'https://www.hacktigerlabs.com'} className="font-medium">
                   About
                 </Link>
               </li>
@@ -53,11 +53,11 @@ export const Navbar = () => {
                   Pricing
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href={"/career"} className="font-medium">
                   Career
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>

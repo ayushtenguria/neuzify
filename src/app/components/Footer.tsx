@@ -1,6 +1,20 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
+import FormButton from "./FormButton";
+import Modal from "./Modal";
+import Form from "./Form";
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const year = new Date().getFullYear();
   return (
     <>
@@ -20,9 +34,10 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <button className="md:mt-6 md:px-6 py-2 w-40 md:w-60 font-semibold bg-blue-950 text-white border-white border-2 rounded-lg shadow hover:bg-blue-900 hover:scale-105 transform transition-transform duration-300">
-              Add to Waitlist
-            </button>
+            <FormButton onClick={openModal} title="Add to Waitlist" />
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+              <Form />
+            </Modal>
           </div>
         </div>
         <div className="">

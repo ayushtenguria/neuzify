@@ -1,12 +1,24 @@
-"use client"
+"use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../../../public/assets/Investments.png";
 import Image from "next/image";
 import { gsap } from "gsap";
+import FormButton from "./FormButton";
+import Modal from "./Modal";
+import Form from "./Form";
 
 const Hero = () => {
   const headerRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     gsap.fromTo(
@@ -27,11 +39,16 @@ const Hero = () => {
             Simplify Newsletter Management, Amplify Your Reach.
           </p>
           <p className="text-xl">
-            One platform to create, manage, and discover newsletters effortlessly
+            One platform to create, manage, and discover newsletters
+            effortlessly
           </p>
-          <button className="mt-6 px-6 py-2 w-60 font-semibold bg-blue-950 text-white rounded-lg shadow hover:bg-blue-900 hover:scale-105 transform transition-transform duration-300">
+          {/* <button className="mt-6 px-6 py-2 w-60 font-semibold bg-blue-950 text-white rounded-lg shadow hover:bg-blue-900 hover:scale-105 transform transition-transform duration-300">
             Add to Waitlist
-          </button>
+          </button> */}
+          <FormButton onClick={openModal} title="Add to Waitlist" />
+          <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <Form />
+          </Modal>
         </div>
         <div>
           <Image
